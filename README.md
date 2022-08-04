@@ -1,5 +1,5 @@
 ---
-title: Promt In
+title: Prompt generator
 emoji: 🌍
 colorFrom: pink
 colorTo: gray
