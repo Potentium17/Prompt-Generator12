@@ -12,13 +12,13 @@ with open("name.txt", "r") as f:
 def generate(starting_text):
     seed = random.randint(1, 100000)
     set_seed(seed)
-    
+
     # If the text field is empty
     if starting_text == "":
-        starting_text: str = line[random.randrange(0, len(line))]
+        starting_text: str = line[random.randrange(0, len(line))].replace("\n", "")
         starting_text: str = re.sub(r"[,:\-–.!;?_]", '', starting_text)
         print(starting_text)
-        
+
     response = gpt2_pipe(starting_text, max_length=random.randint(20, 45), num_return_sequences=random.randint(5, 15))
     response_list = []
     for x in response:
