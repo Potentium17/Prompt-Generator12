@@ -22,9 +22,9 @@ def generate(starting_text):
     response = gpt2_pipe(starting_text, max_length=random.randint(20, 45), num_return_sequences=random.randint(5, 15))
     response_list = []
     for x in response:
-        if x['generated_text'].strip() != starting_text and len(x['generated_text'].strip()) > (len(starting_text) + 4) \
-                and tr.endswith((":", "-", "—")) is False:
-            response_list.append(x['generated_text'])
+        resp = x['generated_text'].strip()
+        if resp != starting_text and len(resp) > (len(starting_text) + 4) and resp.endswith((":", "-", "—")) is False:
+            response_list.append(resp)
 
     response_end = "\n".join(response_list)
     return response_end
