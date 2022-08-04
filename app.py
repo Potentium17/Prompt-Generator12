@@ -10,7 +10,7 @@ def generate(starting_text):
     seed = random.randint(1, 10000000)
     set_seed(seed)
     response= gpt2_pipe(starting_text, max_length=20, num_return_sequences=5)
-    return response[1]
+    return response[1]['generated_text']
     
 txt=grad.Textbox(lines=1, label="English", placeholder="English Text here")
 out=grad.Textbox(lines=1, label="Generated Text")
