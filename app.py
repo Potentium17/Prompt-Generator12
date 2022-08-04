@@ -9,8 +9,8 @@ def generate(starting_text):
     seed = random.randint(1, 100000)
     set_seed(seed)
     while True:
-        response = str(gpt2_pipe(starting_text, max_length=30, num_return_sequences=random.randint(5, 15))).strip()
-        if starting_text != response[1]['generated_text']:
+        response = gpt2_pipe(starting_text, max_length=30, num_return_sequences=random.randint(5, 15))
+        if starting_text != response[1]['generated_text'].strip():
             print(f"Repeat: {response}")
         else:
             return response[1]['generated_text']
