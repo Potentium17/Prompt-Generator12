@@ -1,5 +1,5 @@
 ---
-title: Prompt generator
+title: Midjourney Prompt Generator
 emoji: 🌍
 colorFrom: pink
 colorTo: gray
