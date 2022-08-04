@@ -31,13 +31,17 @@ def generate(starting_text):
 
 
 txt = grad.Textbox(lines=1, label="English", placeholder="English Text here")
-out = grad.Textbox(lines=5, label="Generated Text")
+out = grad.Textbox(lines=6, label="Generated Text")
+examples = [["mythology of the Slavs"], ["All-seeing eye monitors these world"], ["astronaut dog"], 
+            ["A monochrome forest of ebony trees"], ["sad view of worker in office,"], 
+            ["Headshot photo portrait of John Lennon"], ["wide field with thousands of blue nemophila,"]]
 title = "Prompt Generator"
 article = "<div><center><img src='https://visitor-badge.glitch.me/badge?page_id=max_skobeev_prompt_generator_public' alt='visitor badge'></center></div>"
 
 grad.Interface(fn=generate,
                inputs=txt,
                outputs=out,
+               examples=examples,
                title=title,
                article=article,
                allow_flagging='never',
