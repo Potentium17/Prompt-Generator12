@@ -28,6 +28,8 @@ def generate(starting_text):
                 response_list.append(resp)
     
         response_end = "\n".join(response_list)
+        response_end = re.sub('[^ ]+\.[^ ]+','', response_end)
+        response_end = response_end.replace("<", "").replace(">", "")
         if response_end != "":
             return response_end
         if count == 5:
