@@ -20,7 +20,7 @@ def generate(starting_text):
             starting_text: str = re.sub(r"[,:\-–.!;?_]", '', starting_text)
             print(starting_text)
     
-        response = gpt2_pipe(starting_text, max_length=random.randint(20, 45), num_return_sequences=random.randint(5, 15))
+        response = gpt2_pipe(starting_text, max_length=random.randint(50, 80), num_return_sequences=random.randint(20, 30))
         response_list = []
         for x in response:
             resp = x['generated_text'].strip()
