@@ -53,5 +53,4 @@ grad.Interface(fn=generate,
                description=description,
                article=article,
                allow_flagging='never',
-               cache_examples=False,
-               theme="default").launch(enable_queue=True, debug=True)
+               cache_examples=False).queue(concurrency_count=1, api_open=False).launch(show_api=False, show_error=True)
